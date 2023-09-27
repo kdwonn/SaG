@@ -13,7 +13,7 @@ This repository contains the official source code for our paper:
 > <sup>1</sup>POSTECH CSE, <sup>2</sup>Microsoft Research Asia<br>
 > ICCV, Paris, 2023.
 
-# Dataset Setup
+# Dataset setup
 ## Setting
 - [Download](http://mscoco.org/dataset/#download) the MS COCO images are under `data/coco/images/train2014/`
 - [Download](http://www.eecs.berkeley.edu/~ronghang/projects/cvpr16_text_obj_retrieval/referitdata.tar.gz) the ReferItGame data are under `data/referit/images` and `data/referit/mask`
@@ -21,7 +21,7 @@ This repository contains the official source code for our paper:
 - Download [refer](https://github.com/chenxi116/refer) under `external`. Then strictly follow the [Setup](https://github.com/chenxi116/refer#setup) and [Download](https://github.com/chenxi116/refer#download) section. Also put the `refer` folder in `PYTHONPATH`
 - Download the [MS COCO API](https://github.com/pdollar/coco) also under `external` (i.e. `external/coco/PythonAPI/pycocotools`)
 
-## Data Preparation
+## Data preparation
 ```
 python build_batches.py -d Gref -t train 
 python build_batches.py -d Gref -t val 
@@ -35,35 +35,36 @@ python build_batches.py -d unc+ -t testA
 python build_batches.py -d unc+ -t testB
 ```
 
-## Directory Structure After Sutup and Data Preparation
+## Final `./data` directory structure
+```
+./data              
+â”œâ”€ refcoco   
+â”‚   â”œâ”€ Gref
+â”‚   â”‚   â”œâ”€ train_batch
+â”‚   â”‚   â”‚   â”œâ”€ Gref_train_0.npz
+â”‚   â”‚   â”‚   â”œâ”€ Gref_train_1.npz
+â”‚   â”‚   â”‚   â””â”€ ...
+â”‚   â”‚   â”œâ”€ train_image
+â”‚   â”‚   â”œâ”€ train_label 
+â”‚   â”‚   â”œâ”€ val_batch
+â”‚   â”‚   â”œâ”€ val_image
+â”‚   â”‚   â””â”€ val_label
+â”‚   â”œâ”€ unc
+â”‚   â”‚   â””â”€ ...
+â”‚   â””â”€ unc+
+â”‚       â””â”€ ...
+â”œâ”€ phrasecut
+â”‚   â””â”€ images
+â”‚      â”œâ”€ refer_train_ris.json
+â”‚      â”œâ”€ refer_val_ris.json
+â”‚      â””â”€  refer_test_ris.json
+â”œâ”€ Gref_emb.npy
+â”œâ”€ referit_emb.npy
+â”œâ”€ vocabulary_Gref.txt
+â””â”€ vocabulary_referit.txt
+```
 
-    ¦§¦¡ ./data              
-       ¦§¦¡ refcoco   
-       ¦¢   ¦§¦¡ Gref
-       ¦¢   ¦¢   ¦§¦¡ train_batch
-       ¦¢   ¦¢   |     ¦§¦¡ Gref_train_0.npz
-       ¦¢   ¦¢   |     ¦§¦¡ Gref_train_1.npz
-       ¦¢   ¦¢   |     ¦¦¦¡ ...
-       |   |   ¦§¦¡ train_image
-       ¦¢   ¦¢   ¦§¦¡ train_label 
-       ¦¢   ¦¢   ¦§¦¡ val_batch
-       ¦¢   ¦¢   ¦§¦¡ val_image
-       ¦¢   ¦¢   ¦¦¦¡ val_label
-       ¦¢   ¦§¦¡ unc
-       ¦¢   ¦¦¦¡ unc+
-       ¦§¦¡ phrasecut
-       ¦¢   ¦¦¦¡ images
-       ¦¢       ¦§¦¡ refer_train_ris.json
-       ¦¢       ¦§¦¡ refer_val_ris.json
-       ¦¢       ¦¦¦¡ refer_test_ris.json
-       ¦§¦¡ Gref_emb.npy
-       ¦§¦¡ referit_emb.npy
-       ¦§¦¡ vocabulary_Gref.txt
-       ¦¦¦¡ vocabulary_referit.txt
-
-
-
-# Environment Setup
+# Environment setup
 
 * Python 3.10.9
 * PyTorch 1.13.1+cu117
