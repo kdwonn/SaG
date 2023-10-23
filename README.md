@@ -1,4 +1,4 @@
-# Improving Cross-Modal Retrieval with Set of Diverse Embeddings
+# Shatter and Gather: Learning Referring Image Segmentation with Text Supervision
 
 [![arXiv](https://img.shields.io/badge/arXiv-1234.56789-b31b1b.svg)](https://arxiv.org/abs/2308.15512)  [![Badge](https://img.shields.io/badge/ProjectPage-SaG-Green.svg?)](https://southflame.github.io/sag/)
 
