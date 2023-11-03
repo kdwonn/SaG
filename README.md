@@ -4,10 +4,11 @@
 
 ![plot](./teaser.jpg)
 
+
 This repository contains the official source code for our paper:
->[Shatter and Gather: Learning Referring Image Segmentation with Text Supervision](https://arxiv.org/abs/2308.15512)  
+>[Shatter and Gather: Learning Referring Image Segmentation with Text Supervision](https://arxiv.org/abs/2308.15512)
 > [Dongwon Kim<sup>1</sup>](https://kdwonn.github.io/),
-> [Namyup Kim<sup>1</sup>](https://southflame.github.io/), 
+> [Namyup Kim<sup>1</sup>](https://southflame.github.io/),
 > [Cuiling Lan<sup>2</sup>](https://scholar.google.com/citations?user=XZugqiwAAAAJ&hl=en), and
 > [Suha Kwak<sup>1</sup>](https://suhakwak.github.io/) <br>
 > <sup>1</sup>POSTECH CSE, <sup>2</sup>Microsoft Research Asia<br>
@@ -17,35 +18,35 @@ This repository contains the official source code for our paper:
 ## Setting
 - [Download](http://mscoco.org/dataset/#download) the MS COCO images are under `data/coco/images/train2014/`
 - [Download](http://www.eecs.berkeley.edu/~ronghang/projects/cvpr16_text_obj_retrieval/referitdata.tar.gz) the ReferItGame data are under `data/referit/images` and `data/referit/mask`
-- Download [TF-resnet](https://github.com/chenxi116/TF-resnet) and [TF-deeplab](https://github.com/chenxi116/TF-deeplab) under `external` folder. Then strictly foll 
+- Download [TF-resnet](https://github.com/chenxi116/TF-resnet) and [TF-deeplab](https://github.com/chenxi116/TF-deeplab) under `external` folder. Then strictly foll
 - Download [refer](https://github.com/chenxi116/refer) under `external`. Then strictly follow the [Setup](https://github.com/chenxi116/refer#setup) and [Download](https://github.com/chenxi116/refer#download) section. Also put the `refer` folder in `PYTHONPATH`
 - Download the [MS COCO API](https://github.com/pdollar/coco) also under `external` (i.e. `external/coco/PythonAPI/pycocotools`)
 
 ## Data preparation
 ```
-python build_batches.py -d Gref -t train 
-python build_batches.py -d Gref -t val 
-python build_batches.py -d unc -t train 
-python build_batches.py -d unc -t val 
-python build_batches.py -d unc -t testA 
-python build_batches.py -d unc -t testB 
-python build_batches.py -d unc+ -t train 
-python build_batches.py -d unc+ -t val 
-python build_batches.py -d unc+ -t testA 
+python build_batches.py -d Gref -t train
+python build_batches.py -d Gref -t val
+python build_batches.py -d unc -t train
+python build_batches.py -d unc -t val
+python build_batches.py -d unc -t testA
+python build_batches.py -d unc -t testB
+python build_batches.py -d unc+ -t train
+python build_batches.py -d unc+ -t val
+python build_batches.py -d unc+ -t testA
 python build_batches.py -d unc+ -t testB
 ```
 
 ## Final `./data` directory structure
 ```
-./data              
-├─ refcoco   
+./data
+├─ refcoco
 │   ├─ Gref
 │   │   ├─ train_batch
 │   │   │   ├─ Gref_train_0.npz
 │   │   │   ├─ Gref_train_1.npz
 │   │   │   └─ ...
 │   │   ├─ train_image
-│   │   ├─ train_label 
+│   │   ├─ train_label
 │   │   ├─ val_batch
 │   │   ├─ val_image
 │   │   └─ val_label
