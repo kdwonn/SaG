@@ -128,7 +128,9 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-data/
+data/coco
+data/refcoco
+data/phrasecut
 logs/
 logs
 wandb/

@@ -17,23 +17,21 @@ This repository contains the official source code for our paper:
 # Dataset setup
 ## Setting
 - [Download](http://mscoco.org/dataset/#download) the MS COCO images are under `data/coco/images/train2014/`
-- [Download](http://www.eecs.berkeley.edu/~ronghang/projects/cvpr16_text_obj_retrieval/referitdata.tar.gz) the ReferItGame data are under `data/referit/images` and `data/referit/mask`
-- Download [TF-resnet](https://github.com/chenxi116/TF-resnet) and [TF-deeplab](https://github.com/chenxi116/TF-deeplab) under `external` folder. Then strictly foll
 - Download [refer](https://github.com/chenxi116/refer) under `external`. Then strictly follow the [Setup](https://github.com/chenxi116/refer#setup) and [Download](https://github.com/chenxi116/refer#download) section. Also put the `refer` folder in `PYTHONPATH`
 - Download the [MS COCO API](https://github.com/pdollar/coco) also under `external` (i.e. `external/coco/PythonAPI/pycocotools`)
 
 ## Data preparation
 ```
-python build_batches.py -d Gref -t train
-python build_batches.py -d Gref -t val
-python build_batches.py -d unc -t train
-python build_batches.py -d unc -t val
-python build_batches.py -d unc -t testA
-python build_batches.py -d unc -t testB
-python build_batches.py -d unc+ -t train
-python build_batches.py -d unc+ -t val
-python build_batches.py -d unc+ -t testA
-python build_batches.py -d unc+ -t testB
+python build_batches.py -d Gref -t train 
+python build_batches.py -d Gref -t val 
+python build_batches.py -d unc -t train 
+python build_batches.py -d unc -t val 
+python build_batches.py -d unc -t testA 
+python build_batches.py -d unc -t testB 
+python build_batches.py -d unc+ -t train 
+python build_batches.py -d unc+ -t val 
+python build_batches.py -d unc+ -t testA 
+python build_batches.py -d unc+ -t testB 
 ```
 
 ## Final `./data` directory structure
