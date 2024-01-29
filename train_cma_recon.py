@@ -156,7 +156,7 @@ def validation(epoch, data_loader, model, criterion, recon_criterion, recon_weig
         max_precision, avg_precision = 0., 0.
         max_recall, avg_recall = 0., 0.
         dataset = data_loader.dataset
-        _, _, _, img_a_map, cm_a_map, _, _ = encode_data(
+        _, _, _, img_a_map, cm_a_map, _ = encode_data(
             model, 
             data_loader,
             crop_size=args.crop_size,
